@@ -127,6 +127,7 @@ def main():
         exist_repo()
     elif(select == 5):
         os.system("sudo rm -rf .git/")
+        main()
     elif(select == 99):
         exit()
 main()
