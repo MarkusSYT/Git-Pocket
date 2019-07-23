@@ -6,6 +6,12 @@ def color(c, text):
         return '\033[92m' + str(text) + '\033[0m'
     elif(str(c) == "red"):
         return '\033[91m' + str(text) + '\033[0m'
+    elif(str(c) == "blue"):
+        return '\033[1;34;40m' + str(text) + '\033[0m'
+    elif(str(c) == "yellow"):
+        return '\033[1;33;40m' + str(text) + '\033[0m'
+    elif(str(c) == "lightgreen"):
+        return '\033[1;32;40m' + str(text) + '\033[0m'
 
 def install():
     os.system('sudo apt -y install git');
@@ -29,8 +35,6 @@ def exist_repo():
         print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
         print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
         print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
-        print('')
-        print(platform.platform())
         print('')
         print('     by MarkusS (https://github.com/MarkusSYT)')
         print('')
@@ -104,6 +108,7 @@ def Windows():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print(color('blue', "       Windows Edition                                         "))
     print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('')
@@ -143,6 +148,7 @@ def MacOS():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print(color('yellow', "     Mac Edition                                         "))
     print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('')
@@ -181,6 +187,7 @@ def Linux():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print(color('lightgreen', "       Linux Edition                                         "))
     print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('')
