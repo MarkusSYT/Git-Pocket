@@ -223,7 +223,5 @@ if platform == "linux" or platform == "linux2":
    Linux()
 elif platform == "darwin":
    MacOS()
-elif platform == "win32":
-   Windows()
-elif platform == "win64":
+elif platform == "win32" or platform == "win64":
    Windows()
