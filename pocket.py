@@ -1,4 +1,5 @@
 import os
+from sys import platform
 
 def color(c, text):
     if(str(c) == "green"):
@@ -28,6 +29,9 @@ def exist_repo():
         print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
         print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
         print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+        print('')
+        print(platform.platform())
+        print('')
         print('     by MarkusS (https://github.com/MarkusSYT)')
         print('')
         print('     1. Commit           6. Create branch')
@@ -89,8 +93,46 @@ def init_repos():
     os.system("clear")
     os.system("git init")
     exist_repo()
+def Windows():
+    os.system('cls')
+    print(color('red','  ______   __    __'))
+    print(color('red',' /      \ /  |  /  |'))
+    print(color('red','/$$$$$$  |$$/  _$$ |_'))
+    print(color('red','$$ | _$$/ /  |/ $$   |'))
+    print(color('red','$$ |/    |$$ |$$$$$$/') + color('green','        ____             __        __'))
+    print(color('red','$$ |$$$$ |$$ |  $$ | __') + color('green','     / __ \____  _____/ /_____  / /_'))
+    print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
+    print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
+    print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print('')
+    print('     by MarkusS (https://github.com/MarkusSYT)')
+    print('')
+    print('     1. User Settings')
+    print('')
+    print('     2. Create new Repo')
+    print('')
+    print('     3. Use existing Repo')
+    print('')
+    print('     4. Delete Repo')
+    print('')
+    print('     99. Exit')
+    print('')
+    select = int(input("> "))
 
-def main():
+    if(select == 1):
+        configurate()
+    elif(select == 2):
+        os.system("del .git/")
+        init_repos()
+    elif(select == 3):
+        exist_repo()
+    elif(select == 4):
+        os.system("del .git/")
+        main()
+    elif(select == 99):
+        exit()
+
+def MacOS():
     os.system('clear')
     print(color('red','  ______   __    __'))
     print(color('red',' /      \ /  |  /  |'))
@@ -101,6 +143,45 @@ def main():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print('')
+    print('     by MarkusS (https://github.com/MarkusSYT)')
+    print('')
+    print('     1. User Settings')
+    print('')
+    print('     2. Create new Repo')
+    print('')
+    print('     3. Use existing Repo')
+    print('')
+    print('     4. Delete Repo')
+    print('')
+    print('     99. Exit')
+    print('')
+    select = int(input("> "))
+    if(select == 1):
+        configurate()
+    elif(select == 2):
+        os.system("sudo rm -rf .git/")
+        init_repos()
+    elif(select == 3):
+        exist_repo()
+    elif(select == 4):
+        os.system("sudo rm -rf .git/")
+        main()
+    elif(select == 99):
+        exit()
+
+def Linux():
+    os.system('clear')
+    print(color('red','  ______   __    __'))
+    print(color('red',' /      \ /  |  /  |'))
+    print(color('red','/$$$$$$  |$$/  _$$ |_'))
+    print(color('red','$$ | _$$/ /  |/ $$   |'))
+    print(color('red','$$ |/    |$$ |$$$$$$/') + color('green','        ____             __        __'))
+    print(color('red','$$ |$$$$ |$$ |  $$ | __') + color('green','     / __ \____  _____/ /_____  / /_'))
+    print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
+    print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
+    print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('')
     print('     1. Install Git')
@@ -130,4 +211,12 @@ def main():
         main()
     elif(select == 99):
         exit()
-main()
+
+if platform == "linux" or platform == "linux2":
+   Linux()
+elif platform == "darwin":
+   MacOS()
+elif platform == "win32":
+   Windows()
+elif platform == "win64":
+   Windows()
