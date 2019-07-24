@@ -91,7 +91,13 @@ def exist_repo():
             raw_input("press a button to continue")
             exist_repo()
         elif(select == 99):
-            main()
+            if platform == "linux" or platform == "linux2":
+               Linux()
+            elif platform == "darwin":
+               MacOS()
+            elif platform == "win32" or platform == "win64":
+               Windows()
+
 
 def init_repos():
     os.system("clear")
