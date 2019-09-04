@@ -15,7 +15,7 @@ def color(c, text):
 
 def install():
     os.system('sudo apt -y install git');
-    main()
+    Linux()
 
 def configurate():
     email = raw_input("your email: ")
