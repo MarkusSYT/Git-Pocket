@@ -22,7 +22,12 @@ def configurate():
     name = raw_input("your name: ")
     os.system('git config --global user.name "' + name + '"');
     os.system('git config --global user.email "' + email + '"');
-    main()
+    if platform == "linux" or platform == "linux2":
+	   Linux()
+	elif platform == "darwin":
+	   MacOS()
+	elif platform == "win32" or platform == "win64":
+	   Windows()
 
 def exist_repo():
         os.system('clear')
