@@ -23,11 +23,12 @@ def configurate():
     os.system('git config --global user.name "' + name + '"');
     os.system('git config --global user.email "' + email + '"');
     if platform == "linux" or platform == "linux2":
-	   Linux()
-	elif platform == "darwin":
-	   MacOS()
-	elif platform == "win32" or platform == "win64":
-	   Windows()
+       Linux()
+    elif platform == "darwin":
+       MacOS()
+    elif platform == "win32" or platform == "win64":
+       Windows()
+
 
 def exist_repo():
         os.system('clear')
@@ -144,7 +145,7 @@ def Windows():
         exist_repo()
     elif(select == 4):
         os.system("del .git/")
-        main()
+        Windows()
     elif(select == 99):
         exit()
 
@@ -183,7 +184,7 @@ def MacOS():
         exist_repo()
     elif(select == 4):
         os.system("sudo rm -rf .git/")
-        main()
+        MacOS()
     elif(select == 99):
         exit()
 
@@ -226,7 +227,7 @@ def Linux():
         exist_repo()
     elif(select == 5):
         os.system("sudo rm -rf .git/")
-        main()
+        Linux()
     elif(select == 99):
         exit()
 
