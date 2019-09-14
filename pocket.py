@@ -52,7 +52,7 @@ def exist_repo():
         print('')
         print('     4. Repo status      9. Connect remote Repository')
         print('')
-        print('     5. Show Log         9. push to remote Repository')
+        print('     5. Show Log         10. push to remote Repository')
         print('')
         print('     99. Back')
         print('')
@@ -103,7 +103,7 @@ def exist_repo():
             raw_input("press a button to continue")
             exist_repo()
         elif(select == 10):
-            name = raw_input("branch to push Link: ")
+            name = raw_input("branch to push: ")
             os.system("git push -u origin " + name)
             print("")
             raw_input("press a button to continue")
