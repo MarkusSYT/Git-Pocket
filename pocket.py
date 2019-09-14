@@ -146,6 +146,8 @@ def Windows():
     print('')
     print('     4. Delete Repo')
     print('')
+    print('     5. Clone Repo')
+    print('')
     print('     99. Exit')
     print('')
     select = int(input("> "))
@@ -160,6 +162,10 @@ def Windows():
     elif(select == 4):
         os.system("del .git/")
         Windows()
+    elif(select == 5):
+        name = raw_input("repo to clone: ")
+        os.system("git clone " + name)
+        print("")
     elif(select == 99):
         exit()
 
@@ -187,6 +193,8 @@ def MacOS():
     print('')
     print('     4. Delete Repo')
     print('')
+    print('     5. Clone Repo')
+    print('')
     print('     99. Exit')
     print('')
     select = int(input("> "))
@@ -200,6 +208,10 @@ def MacOS():
     elif(select == 4):
         os.system("sudo rm -rf .git/")
         MacOS()
+    elif(select == 5):
+        name = raw_input("repo to clone: ")
+        os.system("git clone " + name)
+        print("")
     elif(select == 99):
         exit()
 
@@ -229,6 +241,8 @@ def Linux():
     print('')
     print('     5. Delete Repo')
     print('')
+    print('     6. Clone Repo')
+    print('')
     print('     99. Exit')
     print('')
     select = int(input("> "))
@@ -244,6 +258,10 @@ def Linux():
     elif(select == 5):
         os.system("sudo rm -rf .git/")
         Linux()
+    elif(select == 6):
+        name = raw_input("repo to clone: ")
+        os.system("git clone " + name)
+        print("")
     elif(select == 99):
         exit()
 
