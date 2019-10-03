@@ -105,6 +105,7 @@ def exist_repo():
             exist_repo()
         elif(select == 10):
             name = raw_input("branch to push: ")
+            os.system("git pull --rebase origin " + name)
             os.system("git push -u origin " + name)
             print("")
             raw_input("press a button to continue")
