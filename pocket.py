@@ -14,7 +14,7 @@ def color(c, text):
         return '\033[1;32;40m' + str(text) + '\033[0m'
 
 def install():
-    os.system('sudo apt -y install git');
+    os.system('sudo apt -y install git')
     Linux()
 
 def configurate():
