@@ -20,8 +20,8 @@ def install():
 def configurate():
     email = raw_input("your email: ")
     name = raw_input("your name: ")
-    os.system('git config --global user.name "' + name + '"');
-    os.system('git config --global user.email "' + email + '"');
+    os.system('git config --global user.name "' + name + '"')
+    os.system('git config --global user.email "' + email + '"')
     if platform == "linux" or platform == "linux2":
        Linux()
     elif platform == "darwin":
