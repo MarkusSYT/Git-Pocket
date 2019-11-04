@@ -121,6 +121,9 @@ def exist_repo():
 def init_repos():
     os.system("clear")
     os.system("git init")
+    file = open(".gitignore", "w")
+    file.write("pocket.py")
+    file.close()
     exist_repo()
 def Windows():
     os.system('cls')
