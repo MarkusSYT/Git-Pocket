@@ -18,8 +18,8 @@ def install():
     Linux()
 
 def configurate():
-    email = raw_input("your email: ")
-    name = raw_input("your name: ")
+    email = input("your email: ")
+    name = input("your name: ")
     os.system('git config --global user.name "' + name + '"')
     os.system('git config --global user.email "' + email + '"')
     if platform == "linux" or platform == "linux2":
@@ -59,55 +59,55 @@ def exist_repo():
         print('')
         select = int(input("> "))
         if(select == 1):
-            message = raw_input("Message: ")
+            message = input("Message: ")
             os.system("git commit -m " + '"' + message + '"')
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 2):
-            file = raw_input("File to add (* for all): ")
+            file = input("File to add (* for all): ")
             os.system("git add " + file)
             exist_repo()
         elif(select == 3):
-            file = raw_input("File to remove (* for all): ")
+            file = input("File to remove (* for all): ")
             os.system("git rm --cached " + file + " -f")
             exist_repo()
         elif(select == 4):
             os.system("git status")
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 5):
             os.system("git log")
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 6):
-            name = raw_input("name for the branch: ")
+            name = input("name for the branch: ")
             os.system("git branch " + name)
             exist_repo()
         elif(select == 7):
-            name = raw_input("switch to branch: ")
+            name = input("switch to branch: ")
             os.system("git checkout " + name)
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 8):
-            name = raw_input("branch to merge: ")
+            name = input("branch to merge: ")
             os.system("git merge " + name)
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 9):
-            name = raw_input("Repository Link: ")
+            name = input("Repository Link: ")
             os.system("git remote add origin " + name)
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 10):
-            name = raw_input("branch to push: ")
+            name = input("branch to push: ")
             os.system("git push --force-with-lease origin " + name + ":" + name)
             print("")
-            raw_input("press a button to continue")
+            input("press a button to continue")
             exist_repo()
         elif(select == 99):
             if platform == "linux" or platform == "linux2":
@@ -164,7 +164,7 @@ def Windows():
         os.system("del .git/")
         Windows()
     elif(select == 5):
-        name = raw_input("repo to clone: ")
+        name = input("repo to clone: ")
         os.system("git clone " + name)
         print("")
     elif(select == 99):
@@ -208,7 +208,7 @@ def MacOS():
         os.system("sudo rm -rf .git/")
         MacOS()
     elif(select == 5):
-        name = raw_input("repo to clone: ")
+        name = input("repo to clone: ")
         os.system("git clone " + name)
         print("")
     elif(select == 99):
@@ -254,7 +254,7 @@ def Linux():
         os.system("sudo rm -rf .git/")
         Linux()
     elif(select == 6):
-        name = raw_input("repo to clone: ")
+        name = input("repo to clone: ")
         os.system("git clone " + name)
         print("")
     elif(select == 99):
