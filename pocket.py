@@ -11,6 +11,7 @@ def print_repo():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
+    get_edition()
     print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('                (https://gitlab.com/MarkusSYT)')
@@ -38,7 +39,7 @@ def print_menu():
     print(color('red','$$ \__$$ |$$ |  $$ |/  |') + color('green','   / /_/ / __ \/ ___/ //_/ _ \/ __/'))
     print(color('red','$$    $$/ $$ |  $$  $$/') + color('green','   / ____/ /_/ / /__/ ,< /  __/ /_'))
     print(color('red',' $$$$$$/  $$/    $$$$/') + color('green','   /_/    \____/\___/_/|_|\___/\__/'))
-    print(color('blue', "       Windows Edition                                         "))
+    get_edition()
     print('')
     print('     by MarkusS (https://github.com/MarkusSYT)')
     print('                (https://gitlab.com/MarkusSYT)')
@@ -54,6 +55,14 @@ def print_menu():
     print('     99. Exit')
     print('')
 
+def get_edition():
+    if platform == "linux" or platform == "linux2":
+        print(color('lightgreen', "       Linux Edition                                         "))
+    elif platform == "darwin":
+        print(color('red', "       Mac Edition                                         "))
+    elif platform == "win32" or platform == "win64":
+        print(color('blue', "       Windows Edition                                         "))
+
 def color(c, text):
     if(str(c) == "green"):
         return '\033[92m' + str(text) + '\033[0m'
@@ -66,26 +75,7 @@ def color(c, text):
     elif(str(c) == "lightgreen"):
         return '\033[1;32;40m' + str(text) + '\033[0m'
 
-def install():
-    os.system('sudo apt -y install git')
-    Linux()
-
-def configurate():
-    email = input("your email: ")
-    name = input("your name: ")
-    os.system('git config --global user.name "' + name + '"')
-    os.system('git config --global user.email "' + email + '"')
-    if platform == "linux" or platform == "linux2":
-       Linux()
-    elif platform == "darwin":
-       MacOS()
-    elif platform == "win32" or platform == "win64":
-       Windows()
-
-
-def exist_repo():
-    os.system('clear')
-    print_repo()
+def select_repo():
     select = int(input("> "))
     if(select == 1):
         message = input("Message: ")
@@ -146,6 +136,28 @@ def exist_repo():
         elif platform == "win32" or platform == "win64":
             Windows()
 
+def install():
+    os.system('sudo apt -y install git')
+    Linux()
+
+def configurate():
+    email = input("your email: ")
+    name = input("your name: ")
+    os.system('git config --global user.name "' + name + '"')
+    os.system('git config --global user.email "' + email + '"')
+    if platform == "linux" or platform == "linux2":
+       Linux()
+    elif platform == "darwin":
+       MacOS()
+    elif platform == "win32" or platform == "win64":
+       Windows()
+
+
+def exist_repo():
+    os.system('clear')
+    print_repo()
+    select_repo()
+
 
 def init_repos():
     os.system("clear")
@@ -154,6 +166,7 @@ def init_repos():
     file.write("pocket.py")
     file.close()
     exist_repo()
+
 def Windows():
     os.system('cls')
     print_menu()
@@ -202,18 +215,16 @@ def Linux():
     print_menu()
     select = int(input("> "))
     if(select == 1):
-        install()
-    elif(select == 2):
         configurate()
-    elif(select == 3):
+    elif(select == 2):
         os.system("sudo rm -rf .git/")
         init_repos()
-    elif(select == 4):
+    elif(select == 3):
         exist_repo()
-    elif(select == 5):
+    elif(select == 4):
         os.system("sudo rm -rf .git/")
         Linux()
-    elif(select == 6):
+    elif(select == 5):
         name = input("repo to clone: ")
         os.system("git clone " + name)
         print("")
